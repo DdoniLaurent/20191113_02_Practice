@@ -5,19 +5,30 @@
 
     <LinearLayout
         android:padding="10dp"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/pizzaLogo"
             android:src="@mipmap/ic_launcher"
             android:layout_width="100dp"
             android:layout_height="100dp"/>
         <TextView
+            android:id="@+id/storeName"
             android:layout_marginLeft="10dp"
             android:layout_gravity="center_vertical"
-            android:id="@+id/storeName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="25sp"
             android:text="가게이름 1"/>
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+        <ImageButton
+            android:id="@+id/nextBtn"
+            android:src="@drawable/next_icon"
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
     </LinearLayout>
 </LinearLayout>
