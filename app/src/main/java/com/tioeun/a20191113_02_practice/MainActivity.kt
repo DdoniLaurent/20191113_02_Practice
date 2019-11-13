@@ -3,6 +3,7 @@ package com.tioeun.a20191113_02_practice
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.tioeun.a20191113_02_practice.adapter.PizzaAdapter
 import com.tioeun.a20191113_02_practice.datas.PizzaData
 import kotlinx.android.synthetic.main.activity_main.*
@@ -23,6 +24,14 @@ class MainActivity : BaseActivity() {
 
     override fun setupEvents() {
 
+        listView.setOnItemClickListener { parent, view, position, id ->
+
+//            Toast.makeText(this,"찍히나?,",Toast.LENGTH_LONG).show()
+
+            var intent = Intent(mContext, DetailActivity::class.java)
+            intent.putExtra("pizzaData", pizzaStoreList[position])
+            startActivity(intent)
+        }
     }
 
     override fun setValues() {
@@ -32,10 +41,7 @@ class MainActivity : BaseActivity() {
         pizzaAdapter = PizzaAdapter(this, R.layout.pizza_list_item, pizzaStoreList)
         listView.adapter = pizzaAdapter
 
-        nextBtn.setOnClickListener {
-            var intent = Intent(this, DetailActivity::class.java)
-            startActivity(intent)
-        }
+
     }
 
     fun addPizzaStores(){

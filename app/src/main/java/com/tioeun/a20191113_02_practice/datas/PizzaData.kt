@@ -1,6 +1,8 @@
 package com.tioeun.a20191113_02_practice.datas
 
-class PizzaData(name:String, phoneNum:String, logoUrl:String)  {
+import java.io.Serializable
+
+class PizzaData(name:String, phoneNum:String, logoUrl:String) :Serializable {
 
     var name = name
 
